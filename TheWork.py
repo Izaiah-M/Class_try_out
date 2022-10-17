@@ -14,7 +14,6 @@ class Student:
 
 class dayOfWeek:
     studentList = [
-
     Student("KKK"	,"S21B13/006",	"A89586",	"B13",	"THURSDAY",	True),
     Student("zaya", "S21B23/008", "A94161", "C45", "THURSDAY", False),
     Student("Q"	,"S21B23/019",	"A94172",	"B23",	"THURSDAY",	   False),  
@@ -119,7 +118,7 @@ def searchToMarkMealCard(cafeteriaList, registrationNumber, dayOfTheWeek):
     return False    
 
 
-print(searchToMarkMealCard(cafeteriaList, "S21B13/079", "THURSDAY"))
+print(searchToMarkMealCard(cafeteriaList, "S21B23/034", "THURSDAY"))
 
 
 

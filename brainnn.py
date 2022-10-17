@@ -68,15 +68,16 @@ then checks to see if a student has eaten or not
 
 """
 def searchToMarkMealCard(cafeteriaList, registrationNumber, dayOfTheWeek):
+
     for day in cafeteriaList:
-        # Tweek number 1 = I forcelfully made day a string so that the algorithm could easily compare.
-        if str(day) == dayOfTheWeek:
+        if(day == dayOfTheWeek):
             for student in day.studentList:
-                # tweek number 2 = The teacher was trying to access reg number through cafeteriaList, but it made more sense to access it through the student variable he had made
-                if registrationNumber == str(student.registrationNumber):
-                    if(not student.hasEaten):
+                if(registrationNumber == cafeteriaList.registrationNumber):
+                    if(not cafeteriaList.hasEaten):
                         return True
-    return False    
+
+    return False
+ 
 
 # This is me testing the thing
-print(searchToMarkMealCard(cafeteriaList, "S21B13/079", "THURSDAY"))
+print(searchToMarkMealCard(cafeteriaList, "S21B23/008", "THURSDAY"))
