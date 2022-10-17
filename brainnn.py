@@ -1,62 +1,33 @@
 
 # Our student class
 class Student:
-    def __init__(self, name, registrationNumber, acc_no = None, course = None, day = None, hasEaten = False):
-        self.name = name
+    def __init__(self, registrationNumber, hasEaten = False):
+
         self.registrationNumber = registrationNumber
-        self.acc_no = acc_no
-        self.course = course
-        self.day = day
         self.hasEaten = hasEaten
 
 
-    def __repr__(self):
+    def  __str__(self):
         return str(self.registrationNumber)
 
 # Our day of the week class
-class dayOfWeek:
+#Nope, just a day class
+class day:
 
     # This is a student list having students/objects made using the Student class
-    studentList = [
-
-    Student("KKK"	,"S21B13/006",	"A89586",	"B13",	"THURSDAY",	True),
-    Student("zaya", "S21B23/008", "A94161", "C45", "THURSDAY", False),
-    Student("Q"	,"S21B23/019",	"A94172",	"B23",	"THURSDAY",	   False),  
-    Student("A"	,"S21B13/060",	"A94446",	"B13",	"THURSDAY"	,    True),
-    Student("S"	,"S21B13/023",	"A93581",	"B13",	"THURSDAY",	    True),
-    Student("D"	,"S21B23/016",	"A94169",	"B23",	"THURSDAY",	   False),
-    Student("F"	,"S21B23/013",	"A94166",	"B23",	"THURSDAY",	   False),
-    Student("G"	,"S21B13/055",	"A94418",	"B13",	"THURSDAY",	    True),
-    Student("H"	,"S21B23/012",	"A94165",	"B23",	"THURSDAY",	   False),
-    Student("J"	,"S21B12/700",	"A95202"),			    
-    Student("K"	,"S21B23/003",	"A94174",	"B23",	"THURSDAY",	   False),
-    Student("L"	,"S21B13/029",	"A93594",	"B13",	"THURSDAY",	    True),
-    Student("Q"	,"S21B13/038",	"A93821",	"B13",	"THURSDAY",	    True),
-    Student("W"	,"S21B13/047",	"A94412",	"B13",	"THURSDAY",	    True),
-    Student("E"	,"S21B90/006",	"A93454"),			    
-    Student("R"	,"S21B23/007",	"A94160",	"B23",	"THURSDAY"	,   False),
-    Student("T"	,"S21D14/004",	"A92513",	"D14",	"THURSDAY"	,   False),
-    Student("Y"	,"IS19B00/157",	"A87113"),			
-    Student("U"	,"S21D14/010",	"A94087",	"D14",	"THURSDAY",	   False),
-    Student("I"	,"S21B13/022",	"A93586",	"B13",	"THURSDAY",	    True),
-   
-    ]
-
-# Constructor takes in day Of the week
-    def __init__(self, dayOfWeek):
-        self.dayOfWeek = dayOfWeek
     
-    def __repr__(self):
-        return str(self.dayOfWeek)
- 
-cafeteriaList = [
-    dayOfWeek("MONDAY"),
-    dayOfWeek("TUESDAY"),
-    dayOfWeek("WEDNESDAY"),
-    dayOfWeek("THURSDAY"),
-    dayOfWeek("FRIDAY"),
-    dayOfWeek("SATURDAY")
-]
+# Constructor takes in day Of the week
+    def __init__(self, dayOfWeek, students):
+        self.dayOfWeek = dayOfWeek
+        self.students = students
+
+    def studentList(self):
+        return self.students
+
+
+    def __str__(self):
+        return self.dayOfWeek
+
 
 """This is the search algorithm thingy but with tweeks cause I feel like the teacher's code had holes."""
 
@@ -66,17 +37,60 @@ reg number
 and day of the week
 then checks to see if a student has eaten or not
 
+****************************************************************************************
+****************************************************************************************
+
+Takes in a list of day class objects. The day class takes a day of the week and a list of student
+classes as parameters in it's constructor
+
+
+Student list is a list of students class objects. Student class objects have the following properties:
+1. regnumber
+2. hasEaten
+
+****************************************************************************************
+****************************************************************************************
+
+
 """
+
+#The algorithm searches through a nested list
+#When the student is found, the algorithm finds out if the student has not eaten
 def searchToMarkMealCard(cafeteriaList, registrationNumber, dayOfTheWeek):
+
     for day in cafeteriaList:
-        # Tweek number 1 = I forcelfully made day a string so that the algorithm could easily compare.
-        if str(day) == dayOfTheWeek:
-            for student in day.studentList:
-                # tweek number 2 = The teacher was trying to access reg number through cafeteriaList, but it made more sense to access it through the student variable he had made
-                if registrationNumber == str(student.registrationNumber):
+        if(str(day) == dayOfTheWeek):
+           print(day.studentList())
+           for student in day.studentList():
+                print(student.registrationNumber)
+                if(registrationNumber == student.registrationNumber):
                     if(not student.hasEaten):
                         return True
-    return False    
+
+    return False  
+
+
+studentList = [
+
+    Student("S21B13/006"),
+    Student("S21B23/008"),
+    Student("S21B23/019", True),
+    Student("S21B13/060"),
+    Student("S21B13/023", True),
+    Student("S21B23/016"),
+    Student("S21B23/013", True),
+    Student("S21B13/055"),
+]
+
+cafeteriaList = [
+    day("MONDAY",studentList),
+    day("TUESDAY", studentList),
+    day("WEDNESDAY", studentList),
+    day("THURSDAY", studentList),
+    day("FRIDAY", studentList),
+    day("SATURDAY", studentList)
+]
+
 
 # This is me testing the thing
 print(searchToMarkMealCard(cafeteriaList, "S21B13/079", "THURSDAY"))
