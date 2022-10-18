@@ -12,7 +12,7 @@ class Student:
     def __repr__(self):
         return str(self.registrationNumber)
 
-class day:
+class dayOfWeek:
     studentList = [
 
     Student("KKK"	,"S21B13/006",	"A89586",	"B13",	"THURSDAY",	True),
@@ -93,33 +93,33 @@ class day:
     Student("XXXX",  "S21B13/052",	"A89147",	"B13",	"THURSDAY",	True)
     ]
 
-    def __init__(self, day):
-        self.day = day
+    def __init__(self, dayOfWeek):
+        self.dayOfWeek = dayOfWeek
     
     def __repr__(self):
-        return str(self.day)
+        return str(self.dayOfWeek)
  
 cafeteriaList = [
-    day("MONDAY"),
-    day("TUESDAY"),
-    day("WEDNESDAY"),
-    day("THURSDAY"),
-    day("FRIDAY"),
-    day("SATURDAY")
+    dayOfWeek("MONDAY"),
+    dayOfWeek("TUESDAY"),
+    dayOfWeek("WEDNESDAY"),
+    dayOfWeek("THURSDAY"),
+    dayOfWeek("FRIDAY"),
+    dayOfWeek("SATURDAY")
 ]
 
 
 def searchToMarkMealCard(cafeteriaList, registrationNumber, dayOfTheWeek):
     for day in cafeteriaList:
-        if day.day == dayOfTheWeek:
+        if str(day) == dayOfTheWeek:
             for student in day.studentList:
-                if registrationNumber == student.registrationNumber:
+                if registrationNumber == str(student.registrationNumber):
                     if(not student.hasEaten):
-                        return str(True) + " This child is in dire need of food!!"
-    return str(False) + ", this one has eaten"  
+                        return True
+    return False    
 
 
-print(searchToMarkMealCard(cafeteriaList, "S21B23/006", "THURSDAY"))
+print(searchToMarkMealCard(cafeteriaList, "S21B13/079", "THURSDAY"))
 
 
 
