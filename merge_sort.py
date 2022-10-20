@@ -11,23 +11,34 @@ B = [1, 5, 9, 7, 2, 10]
 
 def merge_sort(arr):
 
+    red_flag = 0
+    i = 1
+
     if len(arr) <= 1:
         return arr
     
-    mid = len(arr) // 2
+    while i < len(arr):
+        if(arr[i] < arr[i - 1]):
+            red_flag = 1
+        i += 1
+        
+    if (not red_flag) :
+        return arr
+    else :
 
-    left_side = arr[:mid]
-    right_side = arr[mid:]
-    print(left_side)
-    print(right_side)
-    print(len(arr))
+        mid = len(arr) // 2
 
-    l = merge_sort(left_side)
-    r = merge_sort(right_side)
-    print(l)
-    print(r)
+        left_side = arr[:mid]
+        right_side = arr[mid:]
 
-    return merge(l, r)
+        # print(len(arr))
+
+        l = merge_sort(left_side)
+        r = merge_sort(right_side)
+        print(l)
+        print(r)
+
+        return merge(l, r)
 
 """Function that does the merging of the arrays"""
 
