@@ -7,7 +7,7 @@ merges total output
 """
 
 
-B = [1, 5, 9, 7, 2, 10]
+B = [1, 2, 4, 8]
 
 def merge_sort(arr):
 
