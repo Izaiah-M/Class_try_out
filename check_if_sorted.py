@@ -1,10 +1,10 @@
-test_list = [1, 4, 5, 8, 10]
+test_list = [1, 4, 8, 5, 10]
 
-red_flag = 0
+red_flag = False
 i = 1
 while i < len(test_list):
     if(test_list[i] < test_list[i - 1]):
-        red_flag = 1
+        red_flag = True
     i += 1
       
 # printing result

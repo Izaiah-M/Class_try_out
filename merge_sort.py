@@ -11,7 +11,7 @@ B = [1, 2, 4, 8]
 
 def merge_sort(arr):
 
-    red_flag = 0
+    red_flag = False
     i = 1
 
     if len(arr) <= 1:
@@ -19,7 +19,7 @@ def merge_sort(arr):
     
     while i < len(arr):
         if(arr[i] < arr[i - 1]):
-            red_flag = 1
+            red_flag = True
         i += 1
         
     if (not red_flag) :
