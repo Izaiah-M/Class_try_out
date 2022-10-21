@@ -37,6 +37,7 @@ Student("Y"	,"IS19B00/157",	"A87113", "D23", "THURSDAY", False),
 ]
 
 
+# It can only take a list of student objects.....😢
 def find(list, reg_no, day):
     for student in list:
         if student.registrationNumber == reg_no and student.day == day:
