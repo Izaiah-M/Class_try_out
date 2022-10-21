@@ -39,6 +39,7 @@ Student("Y"	,"IS19B00/157",	"A87113", "D23", "THURSDAY", False),
 
 # It can only take a list of student objects.....😢
 # And changing the days would be a hustle....working on it though
+# the original algorithm is doowwwnnnnn, for comparison
 def find(list, reg_no, day):
     for student in list:
         if student.registrationNumber == reg_no and student.day == day:
@@ -53,58 +54,16 @@ def find(list, reg_no, day):
 print(find(student_list, "S21B13/047", "THURSDAY"))
 
 
-# def find(value):
 
-#     while not student_stack.is_empty():
-
-#         if str(student_stack.peek()) == value:
-#             return "Found"
-        
-#         else:
-#             student_stack.pop()
-
-# print(find("IS19B00/157"))
-
-# print(student_stack.peek())
-
-
- 
-
-
-
-
-
-
-
-
-
-
-# def searchToMarkMealCard(cafeteriaList, registrationNumber, dayOfTheWeek):
-#     for day in cafeteriaList:
-#         if day.day == dayOfTheWeek:
-#             for student in day.studentList:
-#                 if registrationNumber == student.registrationNumber:
-#                     if(not student.hasEaten):
-#                         return str(True) + " This child is in dire need of food!!"
-#     return str(False) + ", this one has eaten"  
-
-
-# print(searchToMarkMealCard(cafeteriaList, "S21B23/006", "THURSDAY"))
-
-
-
-
+#  Original algo
 """def searchToMarkMealCard(cafeteriaList, registrationNumber, dayOfTheWeek):
-
     for day in cafeteriaList:
-        if(day == dayOfTheWeek):
+        if day.day == dayOfTheWeek:
             for student in day.studentList:
-                if(registrationNumber == cafeteriaList.registrationNumber):
-                    if(not cafeteriaList.hasEaten):
-                        return True
-
-    return False"""
-    
+                if registrationNumber == student.registrationNumber:
+                    if(not student.hasEaten):
+                        return str(True) + " This child is in dire need of food!!"
+    return str(False) + ", this one has eaten"  """
 
     
 
