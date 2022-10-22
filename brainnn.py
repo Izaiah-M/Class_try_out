@@ -38,6 +38,7 @@ def set_day(newDay):
 
 """Our Agorithm which is now O(n)"""
 def searchToMarkMealCard(list, reg_no, day):
+    set_day(day)
     for student in list:
         if student.registrationNumber == reg_no and student.day == day:
             if student.hasEaten is not False:
@@ -54,8 +55,7 @@ UUU,S21B13/031,A93611,B13,THURSDAY,True
 
 """
 
-set_day("WEDNESDAY")
-print(searchToMarkMealCard(student_list, "S21B13/031", "WEDNESDAY"))
+print(searchToMarkMealCard(student_list, "S21B13/034", "WEDNESDAY"))
 
 
 
