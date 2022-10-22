@@ -55,7 +55,7 @@ UUU,S21B13/031,A93611,B13,THURSDAY,True
 
 """
 
-print(searchToMarkMealCard(student_list, "S21B13/034", "WEDNESDAY"))
+print(searchToMarkMealCard(student_list, "S21B13/031", "TUESDAY"))
 
 
 
