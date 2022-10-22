@@ -13,7 +13,7 @@ class Student:
     def __repr__(self):
         return str(self.registrationNumber)
 
-
+"""Reading from our csv file and making student objects and appending them to a list...i.e student list"""
 with open("student_list.csv", "r", encoding='utf-8') as students:
     reader = csv.DictReader(students)
 
