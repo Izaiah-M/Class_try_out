@@ -29,21 +29,34 @@ with open("student_list.csv", "r", encoding='utf-8') as students:
         student_list.append(Student(name, reg_no, acc_no, course, day, eaten))
 
 
-# It can only take a list of student objects.....😢
-# And changing the days would be a hustle....working on it though
-# the original algorithm is doowwwnnnnn, for comparison
+"""A function that helps us set the days"""
+def set_day(newDay):
+    for child in student_list:
+        child.day = newDay
+    return newDay
+
+
+"""Our Agorithm which is now O(n)"""
 def searchToMarkMealCard(list, reg_no, day):
     for student in list:
         if student.registrationNumber == reg_no and student.day == day:
-            if student.hasEaten == False:
-                return "child is eligible for food"
-            
-            else:
+            if student.hasEaten is not False:
                 return "eiyyy, trying to double!!"
+    return "child can eat"
     
 
 
-print(searchToMarkMealCard(student_list, "S21B13/047", "THURSDAY"))
+"""
+*******Testing*****
+
+YYY,S21B23/034,A95681,B23,THURSDAY,False
+UUU,S21B13/031,A93611,B13,THURSDAY,True
+
+"""
+
+set_day("WEDNESDAY")
+print(searchToMarkMealCard(student_list, "S21B13/031", "WEDNESDAY"))
+
 
 
 
