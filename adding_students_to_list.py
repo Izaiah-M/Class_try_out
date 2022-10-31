@@ -15,4 +15,3 @@ with open("student_list.csv", "r", encoding='utf-8') as students:
 
         kids.append(Student(name, reg_no, acc_no, course, day, eaten))
 
-print(kids)

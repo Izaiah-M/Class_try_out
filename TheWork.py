@@ -88,6 +88,6 @@ print(searchToMarkMealCard(cafeteriaList, "S21B13/031", "THURSDAY"))
     return False"""
     
 
-    
+
 
 

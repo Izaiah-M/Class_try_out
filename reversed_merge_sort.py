@@ -1,14 +1,5 @@
-"""
-Takes in array from the user
-divides the length of the array into two until only value exits in each array
-compares its self to nearby arrays
-merges total output
 
-"""
-
-
-
-def merge_sort(arr):
+def reverse_merge_sort(arr):
 
     red_flag = False
     i = 1
@@ -17,7 +8,7 @@ def merge_sort(arr):
         return arr
     
     while i < len(arr):
-        if(arr[i] < arr[i - 1]):
+        if(arr[i] > arr[i - 1]):
             red_flag = True
         i += 1
         
@@ -32,8 +23,8 @@ def merge_sort(arr):
 
         # print(len(arr))
 
-        l = merge_sort(left_side)
-        r = merge_sort(right_side)
+        l = reverse_merge_sort(left_side)
+        r = reverse_merge_sort(right_side)
         # print(l)
         # print(r)
 
@@ -53,7 +44,7 @@ def merge(a, b):
 
     while x < len_a and y < len_b:
 
-        if a[x] <= b[y]:
+        if a[x] >= b[y]:
             sorted_array.append(a[x])
             x += 1
             
@@ -77,6 +68,5 @@ def merge(a, b):
     return sorted_array
 
 
-
-
-
+# arr = [4, 3, 1, 6, 7]
+# print(reverse_merge_sort(arr))
