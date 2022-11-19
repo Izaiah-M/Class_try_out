@@ -44,15 +44,15 @@ class Stack:
 
   
 # Defining an empty pizza stack
-"""pizza_stack = Stack(6)"""
+pizza_stack = Stack(6)
 # Adding pizzas as they are ready until we have 
-"""pizza_stack.push("pizza #1")
+pizza_stack.push("pizza #1")
 pizza_stack.push("pizza #2")
 pizza_stack.push("pizza #3")
 pizza_stack.push("pizza #4")
 pizza_stack.push("pizza #5")
 pizza_stack.push("pizza #6")
-"""
+
 # should tell us we are all out of space
 """pizza_stack.push("pizza #7")"""
 
@@ -67,4 +67,12 @@ pizza_stack.pop()"""
 
 # should tell us the stack is empty
 """pizza_stack.pop()"""
-  
+
+def Multipop(s, n):
+  while s and n > 0:
+    s.pop()
+    n -= 1
+
+
+print(Multipop(pizza_stack, 4))
+print(pizza_stack.peek())
