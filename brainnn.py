@@ -34,7 +34,7 @@ with open("student_list.csv", "r", encoding='utf-8') as students:
             eaten = True
 
         student_list.append(Student(str(name), str(reg_no), str(acc_no), str(course), str(day), eaten))
-
+# print(student_list)
 
 """A function that helps us set the days"""
 def set_day(newDay):
