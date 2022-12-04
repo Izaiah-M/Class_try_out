@@ -1,7 +1,4 @@
 import csv
-
-
-
 class CreateTask:
     def __init__(self,taskNo,  category, description, deadline, isComplete = False):
         self.category = category
