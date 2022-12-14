@@ -58,7 +58,21 @@ class Linked_list:
                     current_node.set_next_node(next_node.get_next_node())
                     current_node = None
                 else:
-                    current_node = next_node    
+                    current_node = next_node   
+
+# ll = Linked_list(20)
+# ll.insert_beginning(11)
+# ll.insert_beginning(21)
+# ll.insert_beginning(15)
+
+# ll.remove_node(15)
+
+
+# print(ll.get_head_node())
+# print(ll.stringify_list())
+
+
+
 
 
 
