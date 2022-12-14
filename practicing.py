@@ -134,9 +134,83 @@ class Queue:
             return self.head.get_value()
 
 
+# q = Queue(10)
 
-        
+# q.enqueue(10)
+# q.enqueue(20)
+# q.enqueue(30)
+# q.enqueue(40)
+# q.enqueue(50)
 
+# print(q.has_space())
+# q.dequeue()
+# print(q.peek())
+
+"""STACKS"""
+
+class Stack:
+    def __init__(self, max_size=None):
+        self.max_size = max_size
+        self.top_item = None
+        self.size = 0
+    
+    def push(self, new_value):
+        if self.has_space():
+            value_to_add = Node(new_value)
+            print("Adding: " + str(value_to_add.get_value()))
+
+            if self.is_empty():
+                self.top_item = value_to_add
+            else:
+                value_to_add.set_next_node(self.top_item)
+                self.top_item = value_to_add
+            self.size += 1
+        else:
+            print("There is no space to add {} into the stack, we don't want a stack overflow!".format(new_value))
+    
+    def pop(self):
+        if self.size > 0:
+            item_to_remove = self.top_item
+            self.top_item = item_to_remove.get_next_node()
+
+            self.size -= 1
+
+            return item_to_remove.get_value()
+        else:
+            print("Stack is empty, we dont want a stack underflow!!")
+
+    def peek(self):
+        if self.size > 0:
+            return self.top_item.get_value()
+        else:
+            print("Nothing to see here!, have you tried the push function?")
+
+    def get_size(self):
+        return self.size
+    
+    def is_empty(self):
+        if self.get_size() == 0:
+            return True
+        else:
+            return False
+    
+    def has_space(self):
+        return self.max_size > self.get_size()
+
+s = Stack(4)
+s.push(20)
+s.push(25)
+s.push(26)
+s.push(30)
+
+print(s.peek())
+
+s.pop()
+
+print(s.peek())
+
+s.push(50)
+s.push(400)
 
 
 
