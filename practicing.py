@@ -251,6 +251,7 @@ def binary_search(search_list, target_value):
 # number_list = [1, 2, 3, 4, 5, 10]
 # print(binary_search(number_list, 5))
 
+"""Sorting Algos"""
 
 
 
