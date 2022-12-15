@@ -215,8 +215,8 @@ class Stack:
 
 """Search Algos"""
 
-# Linear search
-number_list = [1, 2, 3, 4, 5, 10]
+"""Linear Search"""
+# number_list = [1, 2, 3, 4, 5, 10]
 
 def linear(search_list, target_value):
     for value in range(len(search_list)):
@@ -229,10 +229,27 @@ def linear(search_list, target_value):
 # print(linear(number_list, 11))
 
 
+"""Binary Search"""
+def binary_search(search_list, target_value):
 
+    mid_point = len(search_list) // 2
+    midpoint_value = search_list[mid_point]
 
+    if midpoint_value == target_value:
+        return mid_point 
+    
+    if midpoint_value > target_value:
+        left_half = search_list[:mid_point]
+        return binary_search(left_half, target_value)
 
+    if midpoint_value < target_value:
+        right_half = search_list[mid_point + 1:]
+        result = binary_search(right_half, target_value)
 
+        return result + mid_point + 1
+
+# number_list = [1, 2, 3, 4, 5, 10]
+# print(binary_search(number_list, 5))
 
 
 
