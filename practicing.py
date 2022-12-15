@@ -213,6 +213,21 @@ class Stack:
 # s.push(400)
 
 
+"""Search Algos"""
+
+# Linear search
+number_list = [1, 2, 3, 4, 5, 10]
+
+def linear(search_list, target_value):
+    for value in range(len(search_list)):
+        if search_list[value] == target_value:
+            return value
+    
+    return "Not found"
+
+# complexity of O(N)
+# print(linear(number_list, 11))
+
 
 
 
