@@ -197,20 +197,20 @@ class Stack:
     def has_space(self):
         return self.max_size > self.get_size()
 
-s = Stack(4)
-s.push(20)
-s.push(25)
-s.push(26)
-s.push(30)
+# s = Stack(4)
+# s.push(20)
+# s.push(25)
+# s.push(26)
+# s.push(30)
 
-print(s.peek())
+# print(s.peek())
 
-s.pop()
+# s.pop()
 
-print(s.peek())
+# print(s.peek())
 
-s.push(50)
-s.push(400)
+# s.push(50)
+# s.push(400)
 
 
 
