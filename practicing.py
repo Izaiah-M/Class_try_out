@@ -345,11 +345,18 @@ def selection_sort(arr):
 """Bubble sort"""
 """Worst case O(N^2)"""
 
-def bubble(arr):
-    for i in range(len(arr) - 1):
-        for j in range(len(arr) -1 - i):
-            if arr[j] > arr[j+1]:
-                arr[j], arr[j+1] = arr[j+1], arr[j]
+def bubble_sort(arr):
+    # Set a flag to track whether any swaps have been made
+    swapped = True
+
+    # Keep looping until no swaps are made
+    while swapped:
+        swapped = False
+        for i in range(len(arr) - 1):
+            # If the current element is greater than the next element, swap them
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swapped = True
     return arr
 
 # number_list = [5, 3, 1, 2, 4]
@@ -361,7 +368,7 @@ OPtimised Merge sort
 """
 def merge_sort(arr):
 
-    red_flag = False
+    isSorted = False
     i = 1
 
     if len(arr) <= 1:
@@ -369,10 +376,10 @@ def merge_sort(arr):
     
     while i < len(arr):
         if(arr[i] < arr[i - 1]):
-            red_flag = True
+            isSorted = True
         i += 1
         
-    if (not red_flag) :
+    if (not isSorted) :
         return arr
     else :
 
