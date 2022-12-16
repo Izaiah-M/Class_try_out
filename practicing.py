@@ -253,10 +253,79 @@ def binary_search(search_list, target_value):
 
 """Sorting Algos"""
 
+"""merge_sort"""
+def merge_sort(list):
+    if len(list) <= 1:
+        return list
+
+    mid_idx = len(list) // 2
+
+    left_half = list[:mid_idx] 
+    right_half = list[mid_idx:] 
+
+    l = merge_sort(left_half)
+    r = merge_sort(right_half)
 
 
+    return merge(l, r)
+
+def merge(l, r):
+    sorted_array = []
+
+    x = 0
+    y = 0
+
+    while x < len(l) and y < len(r):
+        if l[x] <= r[y]:
+            sorted_array.append(l[x])
+            x += 1
+        
+        else:
+            sorted_array.append(r[y])
+            y += 1
+    
+    while x < len(l):
+        sorted_array.append(l[x])
+        x += 1 
+    
+    while y < len(r):
+        sorted_array.append(r[y])
+        y += 1
+
+    return sorted_array
 
 
+# number_list = [5, 3, 1]
+# print(merge_sort(number_list))
+
+
+"""Quick sort"""
+"""n log n"""
+"""Worst case O(n^2)"""
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    
+    pivot = arr[0]
+    left = []
+    right = []
+
+    for value in range(1, len(arr)):
+        if arr[value] < pivot:
+            left.append(arr[value])
+        else:
+            right.append(arr[value])
+    
+    left_side = quick_sort(left)
+    right_side = quick_sort(right)
+
+    return left_side + [pivot] + right_side
+
+# number_list = [5, 3, 1, 2, 4]
+# print(quick_sort(number_list))
+
+"""Selection sort"""
+"""worst case, O(N^2)"""
 
 
 
