@@ -326,8 +326,106 @@ def quick_sort(arr):
 
 """Selection sort"""
 """worst case, O(N^2)"""
+def selection_sort(arr):
+    for value in range(len(arr)):
+        min_value = value
 
+        for element in range(value + 1, len(arr)):
+            if arr[element] < arr[min_value]:
+                min_value = element
+        
+        if min_value != value:
+            arr[value], arr[min_value] = arr[min_value], arr[value]
+    
+    return arr
 
+# number_list = [5, 3, 1, 2, 4]
+# print(selection_sort(number_list))
+
+"""Bubble sort"""
+"""Worst case O(N^2)"""
+
+def bubble(arr):
+    for i in range(len(arr) - 1):
+        for j in range(len(arr) -1 - i):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+# number_list = [5, 3, 1, 2, 4]
+# print(bubble(number_list))
+
+"""
+OPtimised Merge sort
+
+"""
+def merge_sort(arr):
+
+    red_flag = False
+    i = 1
+
+    if len(arr) <= 1:
+        return arr
+    
+    while i < len(arr):
+        if(arr[i] < arr[i - 1]):
+            red_flag = True
+        i += 1
+        
+    if (not red_flag) :
+        return arr
+    else :
+
+        mid = len(arr) // 2
+
+        left_side = arr[:mid]
+        right_side = arr[mid:]
+
+        # print(len(arr))
+
+        l = merge_sort(left_side)
+        r = merge_sort(right_side)
+        # print(l)
+        # print(r)
+
+        return merge(l, r)
+
+"""Function that does the merging of the arrays"""
+
+def merge(a, b):
+
+    sorted_array = []
+
+    x = 0 
+    y = 0 
+
+    len_a = len(a) 
+    len_b = len(b) 
+
+    while x < len_a and y < len_b:
+
+        if a[x] <= b[y]:
+            sorted_array.append(a[x])
+            x += 1
+            
+        else:
+            sorted_array.append(b[y])
+            y += 1  
+                  
+        
+    while x < len_a:
+        sorted_array.append(a[x])
+        x += 1
+        
+
+    while y < len_b:
+        sorted_array.append(b[y])
+        y += 1
+        
+
+        # print(sorted_array)
+
+    return sorted_array
 
 
 

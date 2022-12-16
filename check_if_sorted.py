@@ -1,14 +1,18 @@
-test_list = [1, 4, 8, 5, 10]
 
-red_flag = False
-i = 1
-while i < len(test_list):
-    if(test_list[i] < test_list[i - 1]):
-        red_flag = True
-    i += 1
-      
-# printing result
-if (not red_flag) :
-    print ("Yes, List is sorted.")
-else :
-    print ("No, List is not sorted.")
+def check_if_sorted(arr):
+    isSorted = False
+    i = 1
+
+    while i < len(arr):
+        if(arr[i] < arr[i - 1]):
+            isSorted = True
+        i += 1
+    
+    if not isSorted:
+        print("List is sorted!")
+    else:
+        print("Not Sorted!")
+
+
+test_list = [1, 4, 5, 8, 10]
+check_if_sorted(test_list)
